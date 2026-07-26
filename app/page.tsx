@@ -1,65 +1,999 @@
-import Image from "next/image";
+"use client";
+
+import { useRef, useState } from "react";
 
 export default function Home() {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const toggleAnthem = async () => {
+    const audio = audioRef.current;
+
+    if (!audio) return;
+
+    if (audio.paused) {
+      try {
+        await audio.play();
+        setIsPlaying(true);
+      } catch (error) {
+        console.error("Marş başlatılamadı:", error);
+      }
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+  <>
+    {selectedImage && (
+      <div
+        className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-4"
+        onClick={() => setSelectedImage(null)}
+      >
+        <button
+          type="button"
+          onClick={() => setSelectedImage(null)}
+          className="absolute right-5 top-5 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-black/60 text-3xl text-white transition hover:bg-white hover:text-black"
+          aria-label="Fotoğrafı kapat"
+        >
+          ×
+        </button>
+
+        <img
+          src={selectedImage}
+          alt="Altay FC galeri büyük görünümü"
+          onClick={(event) => event.stopPropagation()}
+          className="max-h-[90vh] max-w-[95vw] rounded-2xl object-contain shadow-2xl"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+      </div>
+    )}
+
+    <main className="min-h-screen bg-black text-white">
+      <section className="relative flex min-h-screen items-center overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/team.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
+
+        <header className="absolute left-0 top-0 z-20 flex w-full items-center justify-between px-6 py-5 md:px-16 md:py-7">
+          <div className="flex items-center gap-4">
+            <img
+              src="/logo.jpg"
+              alt="ALTAY FC logosu"
+              className="h-16 w-14 rounded-lg object-cover shadow-2xl"
+            />
+
+            <div>
+              <p className="text-xl font-black tracking-[0.18em]">ALTAY FC</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-emerald-400">
+                Almaty
+              </p>
+            </div>
+          </div>
+<a
+  href="https://www.instagram.com/fcaltay.kz/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="transition hover:text-emerald-400"
+>
+  Instagram
+</a>
+          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-wider md:flex">
+            <a href="#about" className="transition hover:text-emerald-400">
+              Hakkımızda
+            </a>
+
+            <a href="#team" className="transition hover:text-emerald-400">
+              Takım
+            </a>
+
+            <a href="#management" className="transition hover:text-emerald-400">
+              Teknik Ekip
+            </a>
+
+            <a href="#contact" className="transition hover:text-emerald-400">
+              İletişim
+            </a>
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+  href="https://ardager40.join.football"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="transition hover:text-emerald-400"
+>
+  Lig & Fikstür
+</a>
+            <a href="#awards">ÖDÜL TÖRENİ</a>
+            <a href="#news" className="transition hover:text-emerald-400">
+  Haberler
+</a>
+          </nav>
+        </header>
+
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-28 md:px-16">
+          <div className="max-w-3xl">
+            <p className="mb-5 text-sm font-bold uppercase tracking-[0.35em] text-emerald-400">
+              
+            </p>
+
+            <h1 className="text-6xl font-black leading-none tracking-tight md:text-8xl">
+  <span className="text-white">ALTAY </span>
+  <span className="text-emerald-500">FC</span>
+</h1>
+
+<div className="mt-5 space-y-2">
+  <p className="text-lg font-bold uppercase tracking-[0.35em] text-emerald-400">
+    ALMATY • KAZAKHSTAN
+  </p>
+
+  <p className="text-xl text-white/80 md:text-2xl">
+    40+ Veteran Futbol Takımı
+  </p>
+</div>
+
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/85 md:text-xl">
+              Kazakistan Almatı 40+ Veteran Futbol Ligi&apos;nde mücadele eden
+              Türk futbol takımı.
+            </p>
+
+            <p className="mt-4 max-w-xl text-base leading-7 text-white/60">
+              Anadolu FC olarak başlayan hikâyemiz, bugün ALTAY FC adıyla
+              mücadeleye, dostluğa ve futbol tutkusuna devam ediyor.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="#about"
+                className="rounded-full bg-emerald-600 px-7 py-4 text-sm font-bold uppercase tracking-wider transition hover:bg-emerald-500"
+              >
+                GALERİYİ İNCELE
+              </a>
+
+              <button
+                type="button"
+                onClick={toggleAnthem}
+                className="rounded-full border border-white/40 px-7 py-4 text-sm font-bold uppercase tracking-wider backdrop-blur transition hover:border-white hover:bg-white hover:text-black"
+                
+              >
+                {isPlaying ? "❚❚ Marşı Durdur" : "▶ Marşı Dinle"}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-6 z-10 hidden gap-12 md:left-16 md:flex">
+          <div>
+            <p className="text-3xl font-black">40+</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-white/50">
+              Veteran Ligi
+            </p>
+          </div>
+
+          <div>
+            <p className="text-3xl font-black">28</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-white/50">
+              Oyuncu
+            </p>
+          </div>
+
+          <div>
+            <p className="text-3xl font-black">2026</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-white/50">
+              Sezonu
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        className="border-t border-white/10 bg-zinc-950 px-6 py-24 md:px-16"
+      >
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
+              Hakkımızda
+            </p>
+
+            <h2 className="mt-4 text-4xl font-black md:text-6xl">
+              Bir takımın ötesinde,
+              <span className="block text-emerald-500">büyük bir aile.</span>
+            </h2>
+          </div>
+
+          <div className="space-y-6 text-lg leading-8 text-white/65">
+            <p>
+              ALTAY FC, Kazakistan&apos;ın Almatı şehrinde faaliyet gösteren ve
+              40 yaş üzeri Veteran Futbol Ligi&apos;nde mücadele eden Türk
+              futbol takımıdır.
+            </p>
+
+            <p>
+              Anadolu FC adıyla kurulan takımımız, ALTAY FC ismiyle dostluk,
+              dayanışma, mücadele ve Türk spor kültürünü sahaya taşımaya devam
+              etmektedir.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black px-6 py-20 md:px-16">
+        <div className="mx-auto max-w-7xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.4em] text-emerald-500">
+            ALTAY RUHU
+          </p>
+
+          <h2 className="mx-auto mt-6 max-w-5xl text-4xl font-black leading-tight md:text-7xl">
+            ONE TEAM.
+            <span className="text-white/25"> ONE FAMILY.</span>
+            <span className="block text-emerald-500">ONE GOAL.</span>
+          </h2>
+        </div>
+      </section>
+
+      <section
+        id="team"
+        className="border-t border-white/10 bg-zinc-950 px-6 py-24 md:px-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="overflow-hidden rounded-3xl border border-white/10">
+              <img
+                src="/team.jpg"
+                alt="ALTAY FC takım kadrosu"
+                className="h-full min-h-[420px] w-full object-cover"
+              />
+            </div>
+
+            <div className="flex flex-col justify-center rounded-3xl border border-white/10 bg-black p-8 md:p-12">
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
+                2026 Kadrosu
+              </p>
+
+              <h2 className="mt-5 text-4xl font-black md:text-6xl">
+                Sahada mücadele,
+                <span className="block text-white/30">
+                  saha dışında dostluk.
+                </span>
+              </h2>
+
+              <p className="mt-7 leading-8 text-white/60">
+                ALTAY FC oyuncu kadrosu, resmî takım listesine göre forma
+                numaraları ve pozisyonlarıyla ayrı oyuncu kartları şeklinde
+                eklenecektir.
+              </p>
+
+              <div className="mt-10 grid grid-cols-2 gap-4">
+                <div className="rounded-2xl bg-zinc-950 p-5">
+                  <p className="text-3xl font-black text-emerald-500">28</p>
+                  <p className="mt-2 text-sm uppercase tracking-wider text-white/45">
+                    Oyuncu
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-zinc-950 p-5">
+                  <p className="text-3xl font-black text-emerald-500">40+</p>
+                  <p className="mt-2 text-sm uppercase tracking-wider text-white/45">
+                    Veteran
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="border-t border-white/10 bg-black px-6 py-24 md:px-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
+              2026 Resmî Kadrosu
+            </p>
+
+            <h2 className="mt-4 text-4xl font-black md:text-6xl">
+              ALTAY FC
+              <span className="block text-white/30">Oyuncuları</span>
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {[
+              
+  ["Oktay Aydın", "Kaleci", 1],
+  ["Sebahattin Usanmaz", "Orta Saha", 8],
+  ["Harun Şarapçıoğlu", "Orta Saha", 99],
+  ["Kemal Ayyildiz", "Defans"],
+  ["Hüseyin Yıldız", "Defans", 62],
+  ["Cüneyt Tanrıverdi", "Orta Saha", 5, true],
+  ["Levent Yıldız", "Orta Saha", 16],
+  ["Musa Arslan", "Orta Saha", 21],
+  ["Erlan Satibaldiev", "Orta Saha", 3],
+  ["Murat Çelik", "Orta Saha", 6],
+  ["Zafer Selvitopu", "Orta Saha", 26],
+  ["Rıza Yalçın", "Defans", 77],
+  ["Rıza Çelik", "Forvet", 17],
+  ["İsrafil Kamzayev", "Defans", 52],
+  ["Mesut Özsaç", "Orta Saha", 33],
+  ["Kasım Mauletov", "Forvet", 9],
+  ["Yavuz Bekar", "Forvet"],
+  ["Anatoliy Tsezman", "Defans"],
+  ["İskander Gayniyev", "Orta Saha"],
+  ["Akjol Mamırulı", "Defans"],
+  ["Adris Şehmus", "Orta Saha", 10],
+  ["Azamat Rısbekov", "Defans"],
+]
+            .map(([name, position, number, captain], index) => (
+              <article
+                key={name}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 p-5 transition duration-300 hover:-translate-y-1 hover:border-emerald-500/60"
+              >
+                <div className="absolute right-5 top-5 text-3xl font-black text-emerald-500">
+  {number}
+  {captain && (
+    <span className="ml-2 rounded-full bg-yellow-500 px-2 py-1 text-xs font-bold text-black">
+      C
+    </span>
+  )}
+</div>
+
+                <img
+  src={`/players/${name
+    .toLowerCase()
+    .replaceAll("ı", "i")
+    .replaceAll("ş", "s")
+    .replaceAll("ç", "c")
+    .replaceAll("ğ", "g")
+    .replaceAll("ü", "u")
+    .replaceAll("ö", "o")
+    .replaceAll(" ", "-")}.jpg`}
+  alt={name}
+  className="mb-6 h-32 w-32 rounded-full object-cover  border-2 border-green-500 shadow-lg mx-auto"
+/>
+                <h3 className="text-center text-xl font-bold">{name}</h3>
+
+                <p className="mt-2 text-center text-sm uppercase tracking-[0.2em] text-emerald-500">
+                  {position}
+                </p>
+
+                <div className="mt-6 h-px w-full bg-white/10 transition group-hover:bg-emerald-500/50" />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section
+  id="news"
+  className="border-t border-white/10 bg-black px-6 py-24 text-white md:px-16"
+>
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-12 max-w-4xl">
+      <p className="text-sm font-bold uppercase tracking-[0.35em] text-emerald-500">
+        Haberler
+      </p>
+
+      <h2 className="mt-4 text-4xl font-black md:text-6xl">
+        Sezon Öncesi
+        <span className="block text-white/30">Değerlendirme Toplantısı</span>
+      </h2>
+
+      <p className="mt-6 text-lg leading-8 text-white/65">
+        Federasyon yetkilileri ve takım temsilcileri, yeni sezon öncesinde
+        düzenlenen değerlendirme toplantısında bir araya geldi.
+      </p>
+    </div>
+
+    <article className="overflow-hidden rounded-3xl border border-white/10 bg-zinc-950">
+      <div className="overflow-hidden">
+        <img
+          src="/meeting.jpg"
+          alt="Federasyon yetkilileri ve takım temsilcileriyle sezon öncesi toplantısı"
+          className="h-[420px] w-full object-cover object-center transition duration-500 hover:scale-105 md:h-[620px]"
+        />
+      </div>
+
+      <div className="p-7 md:p-10">
+        <div className="flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.18em]">
+          <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-emerald-400">
+            2026 Sezonu
+          </span>
+
+          <span className="rounded-full border border-white/10 px-4 py-2 text-white/55">
+            Almatı
+          </span>
+        </div>
+
+        <h3 className="mt-6 text-2xl font-black md:text-3xl">
+          Federasyon Yetkilileri ve Takım Temsilcileri Bir Araya Geldi
+        </h3>
+
+        <div className="mt-5 max-w-4xl space-y-4 leading-8 text-white/65">
+          <p>
+            Altay FC olarak, 2026 sezonu öncesinde düzenlenen değerlendirme
+            toplantısına katılım sağladık.
+          </p>
+
+          <p>
+            Toplantıda federasyon yetkilileri ile takım temsilcileri yeni sezon
+            organizasyonu, fikstür planlaması, oyun kuralları ve sezon boyunca
+            uygulanacak esaslar hakkında görüş alışverişinde bulundu.
+          </p>
+
+          <p>
+            Yeni sezonun tüm takımlar için centilmence, dostluk içinde,
+            sakatlıksız ve başarılı geçmesini diliyoruz.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+    </article>
+  </div>
+</section>
+      <section
+        id="management"
+        className="border-t border-white/10 bg-black px-6 py-24 md:px-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
+            Teknik Ekip
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-8 md:p-10">
+              <p className="text-sm uppercase tracking-[0.25em] text-emerald-500">
+                Takım Menajeri
+              </p>
+
+              <h3 className="mt-4 text-3xl font-black">
+                Cüneyt Tanrıverdi
+              </h3>
+            </article>
+
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-8 md:p-10">
+              <p className="text-sm uppercase tracking-[0.25em] text-emerald-500">
+                Teknik Direktör
+              </p>
+
+              <h3 className="mt-4 text-3xl font-black">İsmail Bulut</h3>
+            </article>
+          </div>
         </div>
-      </main>
+      </section>
+<section
+  id="about"
+  className="bg-black text-white py-24 px-6 md:px-20"
+>
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <div>
+      <img
+        src="/team.jpg"
+        alt="Altay FC"
+        className="rounded-2xl shadow-2xl"
+      />
     </div>
-  );
+
+    <div>
+
+      <p className="text-green-400 uppercase tracking-[5px] mb-4">
+        HAKKIMIZDA
+      </p>
+
+      <h2 className="text-5xl font-bold mb-6">
+        Anadolu FC'den
+        <br />
+        Altay FC'ye...
+      </h2>
+
+      <p className="text-gray-300 leading-8 mb-6">
+        ALTAY FC, Kazakistan Almatı Veteran Futbol Ligi'nde mücadele eden,
+        Türk futbol kültürünü yıllardır başarıyla temsil eden bir takımdır.
+      </p>
+
+      <p className="text-gray-400 leading-8">
+        Takımımız ilk olarak Anadolu FC adıyla kurulmuş,
+        daha sonra ALTAY FC ismini alarak yoluna devam etmiştir.
+        Dostluk, mücadele, centilmenlik ve takım ruhu kulübümüzün temel değerleridir.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+      <footer
+        id="contact"
+        className="border-t border-white/10 bg-zinc-950 px-6 py-12 md:px-16"
+      >
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-2xl font-black tracking-wider">ALTAY FC</p>
+            <p className="mt-2 text-sm text-white/45">
+              Almatı, Kazakistan • 40+ Veteran Futbol Takımı
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 text-sm md:items-end">
+  <a
+    href="https://www.instagram.com/fcaltay.kz/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="font-bold text-emerald-500 transition hover:text-emerald-400"
+  >
+    Instagram • @fcaltay.kz
+  </a>
+
+  <p className="mb-3 text-lg font-semibold text-white/80">
+  Almatı Veteran Futbol Ligi
+</p>
+
+<p className="text-white/50">
+  Kuruluş: 2021 (Anadolu FC)
+</p>
+
+<p className="text-white/50">
+  Yeni Kimlik: 2024 (Altay FC)
+</p>
+
+<p className="text-white/35">
+  © 2026 ALTAY FC. Tüm hakları saklıdır.
+</p>
+</div>
+        </div>
+        <section
+  id="gallery"
+  className="border-t border-white/10 bg-black px-6 py-24 md:px-16"
+>
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-12">
+      <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
+        Galeri
+      </p>
+
+      <h2 className="mt-4 text-4xl font-black md:text-6xl">
+        ALTAY FC
+        <span className="block text-white/30">unutulmaz anlar.</span>
+      </h2>
+    </div>
+
+   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  {[
+    "/gallery-1.jpg",
+    "/gallery-3.jpg",
+    "/gallery-4.jpg",
+     "/gallery-7.jpg",
+  "/gallery-9.jpg",
+  "/gallery-10.jpg",
+  "/gallery-11.jpg",
+  "/gallery-12.jpg",
+"/gallery-13.jpg",
+"/gallery-14.jpg",
+"/gallery-15.jpg",
+"/gallery-16.jpg",
+"/gallery-17.jpg",
+"/gallery-18.jpg",
+"/gallery-19.jpg",
+"/gallery-20.jpg",
+"/gallery-21.jpg",
+  ].map((image, index) => (
+    <div
+      key={image}
+      className="group relative overflow-hidden rounded-2xl border border-white/10"
+    >
+      <img
+  src={image}
+  alt={`Altay FC galeri ${index + 1}`}
+  onClick={() => setSelectedImage(image)}
+  className="h-full w-full cursor-zoom-in object-cover transition duration-500 group-hover:scale-105"
+/>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+
+      <div className="absolute bottom-0 left-0 p-5 opacity-0 transition duration-300 group-hover:opacity-100">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
+          ALTAY FC
+        </p>
+
+        <p className="mt-1 text-lg font-bold">
+          Kulüp Arşivi
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+    </div>
+</section>
+<section
+  id="team"
+  className="border-t border-white/10 bg-zinc-950 px-6 py-24 md:px-16"
+>
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-12">
+      <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
+        Takım
+      </p>
+
+      <h2 className="mt-4 text-4xl font-black md:text-6xl">
+        ALTAY FC
+        <span className="block text-white/30">yönetim ve teknik ekip.</span>
+      </h2>
+    </div>
+
+    <div className="grid gap-6 md:grid-cols-2">
+      <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+        <img
+          src="/cuneyt-manager.png"
+          
+          className="h-72 w-full object-contain object-center"
+        />
+
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
+  Kulüp Yöneticisi
+</p>
+
+<h3 className="mt-2 text-3xl font-black">
+  Cüneyt Tanrıverdi
+</h3>
+
+<p className="mt-4 text-white/70">
+  Altay FC'nin organizasyonu, kurumsal yapısı ve sportif faaliyetlerinin koordinasyonundan sorumludur.
+</p>
+      </div>
+
+      <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+        <img
+          src="/ismail-bulut.jpg"
+          alt="İsmail Bulut"
+          className="h-72 w-full object-contain object-center"
+        />
+
+        <div className="p-6">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
+            Teknik Direktör
+          </p>
+
+          <h3 className="mt-2 text-3xl font-black">
+            İsmail Bulut
+          </h3>
+
+          <p className="mt-3 leading-7 text-white/60">
+  Takımın teknik organizasyonu, maç hazırlıkları ve saha içi yönetiminden sorumludur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section
+  id="history"
+  className="border-t border-white/10 bg-black px-6 py-24 md:px-16"
+>
+  <div className="mx-auto max-w-6xl">
+    <div className="mb-14">
+      <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
+        Kulüp Tarihi
+      </p>
+
+      <h2 className="mt-4 text-4xl font-black md:text-6xl">
+  Anadolu FC&apos;den
+  <span className="block text-emerald-400">
+    Altay FC&apos;ye Uzanan Yol
+  </span>
+</h2>
+
+<p className="mt-6 max-w-4xl text-lg leading-8 text-white/70">
+  Yıllar değişti, formalar değişti; ancak dostluk, mücadele ve takım ruhu
+  hep aynı kaldı.
+</p>
+    </div>
+
+    <div className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-12">
+  <div className="space-y-6 text-lg leading-8 text-white/80">
+    <p>
+      Uzun yıllardır Kazakistan&apos;ın Almatı şehrinde,
+      <strong className="text-white"> Almatı Futbol Federasyonu </strong>
+      tarafından düzenlenen
+      <strong className="text-white"> 40+ Veteran Futbol Ligi</strong>
+      &apos;nde farklı takımlarda mücadele eden Türk iş insanları, ortak
+      bir hedef doğrultusunda bir araya gelerek
+      <strong className="text-white"> 2021 yılında Anadolu FC&apos;yi </strong>
+      kurdu.
+    </p>
+
+    <p>
+      Tamamı Almatı&apos;da yaşayan Türk iş insanlarından oluşan takımımız,
+      futbol sevgisini, dostluğu ve dayanışmayı aynı forma altında
+      buluşturarak veteran liginde mücadele etmeye başladı. Anadolu FC,
+      kısa sürede yalnızca sahadaki performansıyla değil; centilmenliği,
+      takım ruhu ve örnek duruşuyla da ligin saygı duyulan ekiplerinden
+      biri haline geldi.
+    </p>
+
+    <p>
+      <strong className="text-white">2024 yılında</strong> kulübümüz yeni
+      bir yapılanma sürecine girerek
+      <strong className="text-white"> Altay FC </strong>
+      adıyla yoluna devam etme kararı aldı. Yenilenen kadrosu, yeni
+      formaları ve güçlü takım ruhuyla Altay FC, geçmişten aldığı değerleri
+      geleceğe taşıyan yeni bir sayfa açtı.
+    </p>
+
+    <p>
+      Altay FC, yeni kimliğiyle çıktığı ilk sezonda ligde istediği puanları
+      toplayamasa da kupa organizasyonunda gösterdiği mücadeleyle yarı
+      finale yükselmeyi başardı. Güçlü rakibi
+      <strong className="text-white"> Dostar </strong>
+      karşısında normal süresi
+      <strong className="text-white"> 0-0 </strong>
+      sona eren karşılaşmada, penaltı atışları sonucunda
+      <strong className="text-white"> 5-4 </strong>
+      mağlup olarak turnuvaya veda etti.
+    </p>
+
+    <p>
+      <strong className="text-white">2026 sezonunun ilk yarısını</strong>,
+      dokuz takımlı ligde averajla
+      <strong className="text-white"> 7. sırada </strong>
+      tamamlayan Altay FC, sezonun ikinci yarısında üst sıralara yükselmek
+      için mücadelesini kararlılıkla sürdürmektedir.
+    </p>
+
+    <p>
+      Bugün Altay FC, Almatı&apos;da yaşayan Türk toplumunu sporun
+      birleştirici gücü etrafında buluşturan güçlü bir dostluk ailesidir.
+      Kulübümüz fair-play anlayışı, centilmenliği ve mücadele ruhuyla
+      yoluna devam etmektedir.
+    </p>
+  </div>
+</div>
+
+<div className="mt-10 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-8 text-center md:p-10">
+  <p className="text-2xl font-black italic leading-snug text-emerald-400 md:text-4xl">
+    &ldquo;Altay FC, sahada rekabeti; saha dışında dostluğu temsil
+    eder.&rdquo;
+  </p>
+</div>
+</div>
+</section>
+<section
+  id="awards"
+  className="border-t border-white/10 bg-zinc-950 px-6 py-24 md:px-16"
+>
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-14 max-w-4xl">
+      <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
+        Kulüp Etkinlikleri
+      </p>
+
+      <h2 className="mt-4 text-4xl font-black text-white md:text-6xl">
+        2025 Sezon Sonu
+        <span className="block text-white/30">Ödül Töreni</span>
+      </h2>
+
+      <p className="mt-6 text-lg leading-8 text-white/70">
+        Altay FC, 2025 sezonunun ardından düzenlenen Almatı Veteran Futbol
+        Ligi ödül töreninde Almatı Futbol Federasyonu yöneticileri, teknik
+        ekipler ve diğer kulüp temsilcileriyle birlikte yer aldı. Kulübümüzü
+        temsilen takım yöneticisi ve kaptanı Cüneyt Tanrıverdi ödülü teslim
+        aldı.
+      </p>
+    </div>
+
+    <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+      <div className="overflow-hidden">
+        <img
+          src="/award-stage.jpg"
+          alt="Altay FC ödül töreni"
+          className="h-[420px] w-full object-cover transition duration-500 hover:scale-105 md:h-[620px]"
+        />
+      </div>
+
+      <div className="p-6 md:p-8">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
+          Altay FC
+        </p>
+
+        <h3 className="mt-2 text-2xl font-black text-white md:text-3xl">
+          Kulübümüz adına ödülün teslim alınışı
+        </h3>
+
+        <p className="mt-3 max-w-3xl leading-7 text-white/60">
+          Takım kaptanı Cüneyt Tanrıverdi, sezon sonu ödül
+          töreninde Altay FC adına ödülü teslim aldı.
+        </p>
+      </div>
+    </div>
+
+    <div className="mt-6 grid gap-6 md:grid-cols-2">
+      <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+        <div className="overflow-hidden">
+          <img
+            src="/award-group.jpg"
+            alt="Almatı Futbol Federasyonu ve kulüp temsilcileri"
+            className="h-80 w-full object-cover transition duration-500 hover:scale-105"
+          />
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-xl font-black text-white">
+            Federasyon ve kulüp temsilcileri
+          </h3>
+
+          <p className="mt-3 leading-7 text-white/60">
+            Almatı Futbol Federasyonu yöneticileri ve veteran liginde yer alan
+            kulüplerin temsilcileri sezon kapanışında bir araya geldi.
+          </p>
+        </div>
+      </div>
+
+      <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+        <div className="overflow-hidden">
+          <img
+            src="/award-ceremony.jpg"
+            alt="2025 sezon sonu ödül töreni"
+            className="h-80 w-full object-cover transition duration-500 hover:scale-105"
+          />
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-xl font-black text-white">
+            2025 sezonunun kapanışı
+          </h3>
+
+          <p className="mt-3 leading-7 text-white/60">
+            Sezon boyunca mücadele eden takımların başarıları kupa ve
+            ödüllerle taçlandırıldı.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="mt-10 rounded-3xl border border-emerald-500/20 bg-emerald-500/5 px-8 py-10 text-center">
+      <p className="mx-auto max-w-4xl text-xl font-semibold leading-9 text-white/85 md:text-2xl">
+        “Kupalar bir sezonu temsil eder. Dostluk ise yıllar boyunca kulübün en
+        büyük başarısı olarak kalır.”
+      </p>
+
+      <p className="mt-5 text-sm font-bold uppercase tracking-[0.3em] text-emerald-400">
+        Altay FC • Almatı
+      </p>
+    </div>
+  </div>
+</section>
+<section
+  id="contact"
+  className="border-t border-white/10 bg-black px-6 py-24 md:px-16"
+>
+  <div className="mx-auto max-w-6xl">
+    <div className="rounded-3xl border border-white/10 bg-white/5 px-8 py-14 text-center md:px-14">
+      <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-400">
+        İletişim
+      </p>
+
+      <h2 className="mt-4 text-4xl font-black text-white md:text-6xl">
+        Altay FC ile
+        <span className="block text-white/30">iletişime geçin</span>
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/65">
+        Altay FC, Almatı Veteran Futbol Ligi’nde mücadele eden 40+ veteran
+        futbol kulübüdür. Kulüp faaliyetleri ve güncel paylaşımlarımız için
+        Instagram hesabımızı takip edebilirsiniz.
+      </p>
+
+      <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          href="https://www.instagram.com/fcaltay.kz/"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-8 py-4 text-sm font-black uppercase tracking-[0.15em] text-black transition hover:scale-105 hover:bg-emerald-400"
+        >
+          Instagram&apos;da Takip Et
+        </a>
+
+        <div className="rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white/70">
+          Almatı • Kazakistan
+        </div>
+      </div>
+
+      <p className="mt-8 text-sm font-semibold text-white/40">
+        @fcaltay.kz
+      </p>
+    </div>
+  </div>
+</section>
+<section
+  id="anisina"
+  className="border-t border-white/10 bg-black px-6 py-24 md:px-16"
+>
+  <div className="mx-auto max-w-4xl text-center">
+
+    <div className="mb-5 text-5xl">🌹</div>
+
+    <div className="flex items-center justify-center gap-5">
+      <div className="h-px w-24 bg-emerald-500/50" />
+
+      <p className="text-sm font-bold uppercase tracking-[0.5em] text-emerald-500">
+        Anısına
+      </p>
+
+      <div className="h-px w-24 bg-emerald-500/50" />
+    </div>
+
+    <img
+      src="/ekrem-kilinc.jpg"
+      alt="Ekrem Kılınç"
+      className="mx-auto mt-8 h-64 w-64 rounded-full border-2 border-white/80 object-cover grayscale shadow-[0_0_30px_rgba(16,185,129,0.25)]"
+    />
+
+    <h2 className="mt-8 text-4xl font-black text-white md:text-5xl">
+      Ekrem Kılınç
+    </h2>
+
+    <p className="mt-3 text-sm font-bold uppercase tracking-[0.35em] text-emerald-400">
+      Altay FC Ailesinin Unutulmaz İsmi
+    </p>
+
+    <p className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-white/40">
+      Altay FC • 2026 Kış Ligi
+    </p>
+
+    <div className="mx-auto my-8 h-px w-32 bg-emerald-500" />
+
+    <div className="mx-auto max-w-3xl space-y-6 text-lg leading-8 text-white/75">
+      <p>
+        Güzel dostumuz ve takım arkadaşımız{" "}
+        <strong className="text-white">Ekrem Kılınç</strong>, yakalandığı
+        amansız hastalığa karşı verdiği mücadeleyi ne yazık ki kaybederek
+        aramızdan ayrıldı.
+      </p>
+
+      <p>
+        2026 yılı Kış Ligi&apos;nde Altay FC formasıyla birlikte sahada
+        mücadele etti. Güler yüzü, karakteri, dostluğu ve mücadeleci ruhuyla
+        takımımızın unutulmaz isimlerinden biri olarak daima kalplerimizde
+        yaşayacaktır.
+      </p>
+    </div>
+
+    <div className="mx-auto mt-9 max-w-3xl rounded-2xl border-x-2 border-emerald-500/60 px-8 py-5">
+      <p className="text-xl font-semibold italic leading-8 text-emerald-400">
+        Bazı insanlar sadece birlikte forma giydiğimiz takım arkadaşlarımız
+        değildir; hayatımızda iz bırakan dostlarımızdır.
+      </p>
+    </div>
+
+    <p className="mt-8 text-lg font-bold text-white">
+      Allah&apos;tan rahmet, ailesine ve tüm sevenlerine sabır diliyoruz.
+    </p>
+
+    <p className="mt-7 text-3xl font-bold italic text-emerald-400 md:text-4xl">
+      Seni hiçbir zaman unutmayacağız.
+    </p>
+
+    <div className="mx-auto mt-10 flex max-w-2xl items-center gap-5">
+      <div className="h-px flex-1 bg-white/15" />
+
+      <p className="text-sm font-bold uppercase tracking-[0.5em] text-white/50">
+        Altay FC Ailesi
+      </p>
+
+      <div className="h-px flex-1 bg-white/15" />
+    </div>
+
+    <p className="mt-6 text-sm text-white/35">
+      💚 Hatıran, Altay FC ailesiyle birlikte yaşamaya devam edecek. 💚
+    </p>
+
+  </div>
+</section>
+      </footer>
+  </main>
+  </>
+);
 }
