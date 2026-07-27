@@ -66,6 +66,27 @@ forward: "Forvet",
 clubManager: "Kulüp Yöneticisi",
 headCoach: "Teknik Direktör",
 
+footerLocation: "Almatı, Kazakistan • 40+ Veteran Futbol Takımı",
+footerLeague: "Almatı Veteran Futbol Ligi",
+footerFounded: "Kuruluş: 2021 (Anadolu FC)",
+footerNewIdentity: "Yeni Kimlik: 2024 (Altay FC)",
+footerRights: "© 2026 ALTAY FC. Tüm hakları saklıdır.",
+
+newsLabel: "Haberler",
+newsTitle1: "Sezon Öncesi",
+newsTitle2: "Değerlendirme Toplantısı",
+newsIntro:
+  "Federasyon yetkilileri ve takım temsilcileri, yeni sezon öncesinde düzenlenen değerlendirme toplantısında bir araya geldi.",
+newsSeason: "2026 Sezonu",
+newsCity: "Almatı",
+newsArticleTitle:
+  "Federasyon Yetkilileri ve Takım Temsilcileri Bir Araya Geldi",
+newsP1:
+  "Altay FC olarak, 2026 sezonu öncesinde düzenlenen değerlendirme toplantısına katılım sağladık.",
+newsP2:
+  "Toplantıda federasyon yetkilileri ile takım temsilcileri yeni sezon organizasyonu, fikstür planlaması, oyun kuralları ve sezon boyunca uygulanacak esaslar hakkında görüş alışverişinde bulundu.",
+newsP3:
+  "Yeni sezonun tüm takımlar için centilmence, dostluk içinde, sakatlıksız ve başarılı geçmesini diliyoruz.",
 },
 
   ru: {
@@ -129,6 +150,28 @@ history: {
 defender: "Защитник",
 midfielder: "Полузащитник",
 forward: "Нападающий",
+
+footerLocation: "Алматы, Казахстан • Ветеранская футбольная команда 40+",
+footerLeague: "Ветеранская футбольная лига Алматы",
+footerFounded: "Основан: 2021 (Anadolu FC)",
+footerNewIdentity: "Новое название: 2024 (Altay FC)",
+footerRights: "© 2026 ALTAY FC. Все права защищены.",
+
+newsLabel: "Новости",
+newsTitle1: "Перед началом сезона",
+newsTitle2: "Оценочная встреча",
+newsIntro:
+  "Представители федерации и команд встретились на совещании, организованном перед началом нового сезона.",
+newsSeason: "Сезон 2026",
+newsCity: "Алматы",
+newsArticleTitle:
+  "Представители федерации и команд провели совместную встречу",
+newsP1:
+  "Altay FC принял участие в оценочной встрече, организованной перед началом сезона 2026 года.",
+newsP2:
+  "Во время встречи представители федерации и команд обсудили организацию нового сезона, составление календаря, правила игры и основные принципы, которые будут действовать в течение сезона.",
+newsP3:
+  "Желаем всем командам честного, дружеского, успешного сезона без травм.",
 
 },
 
@@ -194,6 +237,28 @@ defender: "Қорғаушы",
 midfielder: "Жартылай қорғаушы",
 forward: "Шабуылшы",
 
+footerLocation: "Алматы, Қазақстан • 40+ ардагерлер футбол командасы",
+footerLeague: "Алматы ардагерлер футбол лигасы",
+footerFounded: "Құрылған жылы: 2021 (Anadolu FC)",
+footerNewIdentity: "Жаңа атауы: 2024 (Altay FC)",
+footerRights: "© 2026 ALTAY FC. Барлық құқықтар қорғалған.",
+
+newsLabel: "Жаңалықтар",
+newsTitle1: "Маусым алдындағы",
+newsTitle2: "Бағалау кездесуі",
+newsIntro:
+  "Федерация өкілдері мен команда өкілдері жаңа маусым алдындағы бағалау кездесуінде бас қосты.",
+newsSeason: "2026 маусымы",
+newsCity: "Алматы",
+newsArticleTitle:
+  "Федерация өкілдері мен команда өкілдері бас қосты",
+newsP1:
+  "Altay FC ретінде 2026 маусымы алдындағы бағалау кездесуіне қатыстық.",
+newsP2:
+  "Кездесуде федерация өкілдері мен команда өкілдері жаңа маусымды ұйымдастыру, ойын кестесін жоспарлау, ойын ережелері және маусым бойы қолданылатын қағидалар туралы пікір алмасты.",
+newsP3:
+  "Жаңа маусым барлық командалар үшін әділ, достық жағдайда, жарақатсыз және сәтті өтсін деп тілейміз.",
+
 },
 
   en: {
@@ -257,6 +322,28 @@ history: {
 defender: "Defender",
 midfielder: "Midfielder",
 forward: "Forward",
+
+footerLocation: "Almaty, Kazakhstan • 40+ Veteran Football Team",
+footerLeague: "Almaty Veteran Football League",
+footerFounded: "Founded: 2021 (Anadolu FC)",
+footerNewIdentity: "New Identity: 2024 (Altay FC)",
+footerRights: "© 2026 ALTAY FC. All rights reserved.",
+
+newsLabel: "News",
+newsTitle1: "Pre-Season",
+newsTitle2: "Evaluation Meeting",
+newsIntro:
+  "Federation officials and team representatives met at an evaluation meeting held before the new season.",
+newsSeason: "2026 Season",
+newsCity: "Almaty",
+newsArticleTitle:
+  "Federation Officials and Team Representatives Met Together",
+newsP1:
+  "Altay FC attended the evaluation meeting held before the 2026 season.",
+newsP2:
+  "During the meeting, federation officials and team representatives discussed the organisation of the new season, fixture planning, rules of the game and the principles to be applied throughout the season.",
+newsP3:
+  "We wish all teams a fair, friendly, injury-free and successful new season.",
 
 },
 };

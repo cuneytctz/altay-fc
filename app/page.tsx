@@ -350,7 +350,7 @@ const positionLabels = {
   ["İskander Gayniyev", "midfielder",7],
   ["Akjol Mamırulı", "defender", 3],
   ["Adris Şehmus", "midfielder", 10],
-  ["Azamat Rısbekov", "defender", 4],
+  ["Azamat Rısbekov", "midfielder", 4],
 ]
             .map(([name, position, number, captain], index) => (
               <article
@@ -399,17 +399,16 @@ const positionLabels = {
   <div className="mx-auto max-w-7xl">
     <div className="mb-12 max-w-4xl">
       <p className="text-sm font-bold uppercase tracking-[0.35em] text-emerald-500">
-        Haberler
+        {t.newsLabel}
       </p>
 
       <h2 className="mt-4 text-4xl font-black md:text-6xl">
-        Sezon Öncesi
-        <span className="block text-white/30">Değerlendirme Toplantısı</span>
+        {t.newsTitle1}
+        <span className="block text-white/30">{t.newsTitle2}</span>
       </h2>
 
       <p className="mt-6 text-lg leading-8 text-white/65">
-        Federasyon yetkilileri ve takım temsilcileri, yeni sezon öncesinde
-        düzenlenen değerlendirme toplantısında bir araya geldi.
+        {t.newsIntro}
       </p>
     </div>
 
@@ -434,26 +433,18 @@ const positionLabels = {
         </div>
 
         <h3 className="mt-6 text-2xl font-black md:text-3xl">
-          Federasyon Yetkilileri ve Takım Temsilcileri Bir Araya Geldi
+          {t.newsArticleTitle}
         </h3>
 
         <div className="mt-5 max-w-4xl space-y-4 leading-8 text-white/65">
-          <p>
-            Altay FC olarak, 2026 sezonu öncesinde düzenlenen değerlendirme
-            toplantısına katılım sağladık.
-          </p>
 
-          <p>
-            Toplantıda federasyon yetkilileri ile takım temsilcileri yeni sezon
-            organizasyonu, fikstür planlaması, oyun kuralları ve sezon boyunca
-            uygulanacak esaslar hakkında görüş alışverişinde bulundu.
-          </p>
+  <p>{t.newsP1}</p>
 
-          <p>
-            Yeni sezonun tüm takımlar için centilmence, dostluk içinde,
-            sakatlıksız ve başarılı geçmesini diliyoruz.
-          </p>
-        </div>
+  <p>{t.newsP2}</p>
+
+  <p>{t.newsP3}</p>
+
+</div>
       </div>
     </article>
   </div>
@@ -468,7 +459,7 @@ const positionLabels = {
           <div>
             <p className="text-2xl font-black tracking-wider">ALTAY FC</p>
             <p className="mt-2 text-sm text-white/45">
-              Almatı, Kazakistan • 40+ Veteran Futbol Takımı
+              {t.footerLocation}
             </p>
           </div>
 
@@ -483,19 +474,19 @@ const positionLabels = {
   </a>
 
   <p className="mb-3 text-lg font-semibold text-white/80">
-  Almatı Veteran Futbol Ligi
+  {t.footerLeague}
 </p>
 
 <p className="text-white/50">
-  Kuruluş: 2021 (Anadolu FC)
+  {t.footerFounded}
 </p>
 
 <p className="text-white/50">
-  Yeni Kimlik: 2024 (Altay FC)
+  {t.footerNewIdentity}
 </p>
 
 <p className="text-white/35">
-  © 2026 ALTAY FC. Tüm hakları saklıdır.
+  {t.footerRights}
 </p>
 </div>
         </div>
