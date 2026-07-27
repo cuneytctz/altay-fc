@@ -1,11 +1,21 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { translations, Language } from "./i18n";
 
 export default function Home() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [language, setLanguage] = useState<Language>("tr");
+
+const t = translations[language];
+const positionLabels = {
+  goalkeeper: t.goalkeeper,
+  defender: t.defender,
+  midfielder: t.midfielder,
+  forward: t.forward,
+};
 
   const toggleAnthem = async () => {
     const audio = audioRef.current;
@@ -89,21 +99,22 @@ export default function Home() {
 >
   Instagram
 </a>
-          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-wider md:flex">
+          <div className="hidden md:flex items-center gap-8">
+  <nav className="flex items-center gap-8 text-sm font-semibold uppercase tracking-wide">
             <a href="#about" className="transition hover:text-emerald-400">
-              Hakkımızda
+              {t.about}
             </a>
 
             <a href="#team" className="transition hover:text-emerald-400">
-              Takım
+              {t.team}
             </a>
 
             <a href="#management" className="transition hover:text-emerald-400">
-              Teknik Ekip
+              {t.management}
             </a>
 
             <a href="#contact" className="transition hover:text-emerald-400">
-              İletişim
+              {t.contact}
             </a>
             <a
   href="https://ardager40.join.football"
@@ -111,13 +122,44 @@ export default function Home() {
   rel="noopener noreferrer"
   className="transition hover:text-emerald-400"
 >
-  Lig & Fikstür
+  {t.fixture}
 </a>
-            <a href="#awards">ÖDÜL TÖRENİ</a>
+            <a href="#awards" className="transition hover:text-emerald-400">
+              {t.awards}
+            </a>
             <a href="#news" className="transition hover:text-emerald-400">
-  Haberler
-</a>
+              {t.news}
+            </a>
           </nav>
+          <div className="hidden md:flex items-center gap-3 text-xs font-semibold uppercase tracking-wider">
+  <button
+  onClick={() => setLanguage("tr")}
+  className={`transition ${language === "tr" ? "text-emerald-400" : ""}`}
+>
+  TR
+</button>
+
+<button
+  onClick={() => setLanguage("ru")}
+  className={`transition ${language === "ru" ? "text-emerald-400" : ""}`}
+>
+  RU
+</button>
+
+<button
+  onClick={() => setLanguage("kz")}
+  className={`transition ${language === "kz" ? "text-emerald-400" : ""}`}
+>
+  KZ
+</button>
+
+<button
+  onClick={() => setLanguage("en")}
+  className={`transition ${language === "en" ? "text-emerald-400" : ""}`}
+>
+  EN
+</button>
+</div></div>
         </header>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-28 md:px-16">
@@ -137,18 +179,16 @@ export default function Home() {
   </p>
 
   <p className="text-xl text-white/80 md:text-2xl">
-    40+ Veteran Futbol Takımı
+    {t.heroSubtitle}
   </p>
 </div>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/85 md:text-xl">
-              Kazakistan Almatı 40+ Veteran Futbol Ligi&apos;nde mücadele eden
-              Türk futbol takımı.
+              {t.heroDescription}
             </p>
 
             <p className="mt-4 max-w-xl text-base leading-7 text-white/60">
-              Anadolu FC olarak başlayan hikâyemiz, bugün ALTAY FC adıyla
-              mücadeleye, dostluğa ve futbol tutkusuna devam ediyor.
+              {t.heroStory}
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -156,7 +196,7 @@ export default function Home() {
                 href="#about"
                 className="rounded-full bg-emerald-600 px-7 py-4 text-sm font-bold uppercase tracking-wider transition hover:bg-emerald-500"
               >
-                GALERİYİ İNCELE
+                {t.galleryButton}
               </a>
 
               <button
@@ -165,7 +205,7 @@ export default function Home() {
                 className="rounded-full border border-white/40 px-7 py-4 text-sm font-bold uppercase tracking-wider backdrop-blur transition hover:border-white hover:bg-white hover:text-black"
                 
               >
-                {isPlaying ? "❚❚ Marşı Durdur" : "▶ Marşı Dinle"}
+                {isPlaying ? t.anthemStop : t.anthemPlay}
               </button>
             </div>
           </div>
@@ -175,21 +215,21 @@ export default function Home() {
           <div>
             <p className="text-3xl font-black">40+</p>
             <p className="text-xs uppercase tracking-[0.25em] text-white/50">
-              Veteran Ligi
+              {t.veteranLeague}
             </p>
           </div>
 
           <div>
             <p className="text-3xl font-black">28</p>
             <p className="text-xs uppercase tracking-[0.25em] text-white/50">
-              Oyuncu
+              {t.players}
             </p>
           </div>
 
           <div>
             <p className="text-3xl font-black">2026</p>
             <p className="text-xs uppercase tracking-[0.25em] text-white/50">
-              Sezonu
+              {t.season}
             </p>
           </div>
         </div>
@@ -202,42 +242,24 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
-              Hakkımızda
+              {t.about}
             </p>
 
             <h2 className="mt-4 text-4xl font-black md:text-6xl">
-              Bir takımın ötesinde,
-              <span className="block text-emerald-500">büyük bir aile.</span>
+              {t.aboutTitleLine1},
+              <span className="block text-emerald-500">{t.aboutTitleLine2}</span>
             </h2>
           </div>
 
           <div className="space-y-6 text-lg leading-8 text-white/65">
             <p>
-              ALTAY FC, Kazakistan&apos;ın Almatı şehrinde faaliyet gösteren ve
-              40 yaş üzeri Veteran Futbol Ligi&apos;nde mücadele eden Türk
-              futbol takımıdır.
+              {t.aboutText1}
             </p>
 
             <p>
-              Anadolu FC adıyla kurulan takımımız, ALTAY FC ismiyle dostluk,
-              dayanışma, mücadele ve Türk spor kültürünü sahaya taşımaya devam
-              etmektedir.
+              {t.aboutText2}
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-black px-6 py-20 md:px-16">
-        <div className="mx-auto max-w-7xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.4em] text-emerald-500">
-            ALTAY RUHU
-          </p>
-
-          <h2 className="mx-auto mt-6 max-w-5xl text-4xl font-black leading-tight md:text-7xl">
-            ONE TEAM.
-            <span className="text-white/25"> ONE FAMILY.</span>
-            <span className="block text-emerald-500">ONE GOAL.</span>
-          </h2>
         </div>
       </section>
 
@@ -307,33 +329,32 @@ export default function Home() {
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {[
-              
-  ["Oktay Aydın", "Kaleci", 1],
-  ["Sebahattin Usanmaz", "Orta Saha", 8],
-  ["Harun Şarapçıoğlu", "Orta Saha", 99],
-  ["Kemal Ayyildiz", "Defans"],
-  ["Hüseyin Yıldız", "Defans", 62],
-  ["Cüneyt Tanrıverdi", "Orta Saha", 5, true],
-  ["Levent Yıldız", "Orta Saha", 16],
-  ["Musa Arslan", "Orta Saha", 21],
-  ["Erlan Satibaldiev", "Orta Saha", 3],
-  ["Murat Çelik", "Orta Saha", 6],
-  ["Zafer Selvitopu", "Orta Saha", 26],
-  ["Rıza Yalçın", "Defans", 77],
-  ["Rıza Çelik", "Forvet", 17],
-  ["İsrafil Kamzayev", "Defans", 52],
-  ["Mesut Özsaç", "Orta Saha", 33],
-  ["Kasım Mauletov", "Forvet", 9],
-  ["Yavuz Bekar", "Forvet"],
-  ["Anatoliy Tsezman", "Defans"],
-  ["İskander Gayniyev", "Orta Saha"],
-  ["Akjol Mamırulı", "Defans"],
-  ["Adris Şehmus", "Orta Saha", 10],
-  ["Azamat Rısbekov", "Defans"],
+  ["Oktay Aydın", "goalkeeper", 1],
+  ["Sebahattin Usanmaz", "midfielder", 8],
+  ["Harun Şarapçıoğlu", "midfielder", 99],
+  ["Kemal Ayyildiz", "defender", 36],
+  ["Hüseyin Yıldız", "defender", 62],
+  ["Cüneyt Tanrıverdi", "midfielder", 5, true],
+  ["Levent Yıldız", "midfielder", 16],
+  ["Musa Arslan", "midfielder", 21],
+  ["Erlan Satibaldiev", "midfielder", 3],
+  ["Murat Çelik", "midfielder", 6],
+  ["Zafer Selvitopu", "midfielder", 26],
+  ["Rıza Yalçın", "defender", 77],
+  ["Rıza Çelik", "forward", 17],
+  ["İsrafil Kamzayev", "defender", 52],
+  ["Mesut Özsaç", "midfielder", 33],
+  ["Kasım Mauletov", "forward", 9],
+  ["Yavuz Bekar", "forward", 88],
+  ["Anatoliy Tsezman", "defender", 2],
+  ["İskander Gayniyev", "midfielder",7],
+  ["Akjol Mamırulı", "defender", 3],
+  ["Adris Şehmus", "midfielder", 10],
+  ["Azamat Rısbekov", "defender", 4],
 ]
             .map(([name, position, number, captain], index) => (
               <article
-                key={name}
+                key={String(name)}
                 className="group relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 p-5 transition duration-300 hover:-translate-y-1 hover:border-emerald-500/60"
               >
                 <div className="absolute right-5 top-5 text-3xl font-black text-emerald-500">
@@ -346,8 +367,9 @@ export default function Home() {
 </div>
 
                 <img
-  src={`/players/${name
-    .toLowerCase()
+  
+    src={`/players/${String(name)
+  .toLowerCase()
     .replaceAll("ı", "i")
     .replaceAll("ş", "s")
     .replaceAll("ç", "c")
@@ -355,13 +377,13 @@ export default function Home() {
     .replaceAll("ü", "u")
     .replaceAll("ö", "o")
     .replaceAll(" ", "-")}.jpg`}
-  alt={name}
+  alt={String(name)}
   className="mb-6 h-32 w-32 rounded-full object-cover  border-2 border-green-500 shadow-lg mx-auto"
 />
                 <h3 className="text-center text-xl font-bold">{name}</h3>
 
                 <p className="mt-2 text-center text-sm uppercase tracking-[0.2em] text-emerald-500">
-                  {position}
+                  {positionLabels[position as keyof typeof positionLabels]}
                 </p>
 
                 <div className="mt-6 h-px w-full bg-white/10 transition group-hover:bg-emerald-500/50" />
@@ -436,77 +458,8 @@ export default function Home() {
     </article>
   </div>
 </section>
-      <section
-        id="management"
-        className="border-t border-white/10 bg-black px-6 py-24 md:px-16"
-      >
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
-            Teknik Ekip
-          </p>
+      
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-8 md:p-10">
-              <p className="text-sm uppercase tracking-[0.25em] text-emerald-500">
-                Takım Menajeri
-              </p>
-
-              <h3 className="mt-4 text-3xl font-black">
-                Cüneyt Tanrıverdi
-              </h3>
-            </article>
-
-            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-8 md:p-10">
-              <p className="text-sm uppercase tracking-[0.25em] text-emerald-500">
-                Teknik Direktör
-              </p>
-
-              <h3 className="mt-4 text-3xl font-black">İsmail Bulut</h3>
-            </article>
-          </div>
-        </div>
-      </section>
-<section
-  id="about"
-  className="bg-black text-white py-24 px-6 md:px-20"
->
-  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
-    <div>
-      <img
-        src="/team.jpg"
-        alt="Altay FC"
-        className="rounded-2xl shadow-2xl"
-      />
-    </div>
-
-    <div>
-
-      <p className="text-green-400 uppercase tracking-[5px] mb-4">
-        HAKKIMIZDA
-      </p>
-
-      <h2 className="text-5xl font-bold mb-6">
-        Anadolu FC'den
-        <br />
-        Altay FC'ye...
-      </h2>
-
-      <p className="text-gray-300 leading-8 mb-6">
-        ALTAY FC, Kazakistan Almatı Veteran Futbol Ligi'nde mücadele eden,
-        Türk futbol kültürünü yıllardır başarıyla temsil eden bir takımdır.
-      </p>
-
-      <p className="text-gray-400 leading-8">
-        Takımımız ilk olarak Anadolu FC adıyla kurulmuş,
-        daha sonra ALTAY FC ismini alarak yoluna devam etmiştir.
-        Dostluk, mücadele, centilmenlik ve takım ruhu kulübümüzün temel değerleridir.
-      </p>
-
-    </div>
-
-  </div>
-</section>
       <footer
         id="contact"
         className="border-t border-white/10 bg-zinc-950 px-6 py-12 md:px-16"
@@ -676,87 +629,36 @@ export default function Home() {
   <div className="mx-auto max-w-6xl">
     <div className="mb-14">
       <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
-        Kulüp Tarihi
+        {t.history.label}
       </p>
 
       <h2 className="mt-4 text-4xl font-black md:text-6xl">
-  Anadolu FC&apos;den
+  {t.history.title1}
   <span className="block text-emerald-400">
-    Altay FC&apos;ye Uzanan Yol
+    {t.history.title2}
   </span>
 </h2>
 
 <p className="mt-6 max-w-4xl text-lg leading-8 text-white/70">
-  Yıllar değişti, formalar değişti; ancak dostluk, mücadele ve takım ruhu
-  hep aynı kaldı.
-</p>
-    </div>
+  {t.history.intro}
+</p>    </div>
 
     <div className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-12">
   <div className="space-y-6 text-lg leading-8 text-white/80">
-    <p>
-      Uzun yıllardır Kazakistan&apos;ın Almatı şehrinde,
-      <strong className="text-white"> Almatı Futbol Federasyonu </strong>
-      tarafından düzenlenen
-      <strong className="text-white"> 40+ Veteran Futbol Ligi</strong>
-      &apos;nde farklı takımlarda mücadele eden Türk iş insanları, ortak
-      bir hedef doğrultusunda bir araya gelerek
-      <strong className="text-white"> 2021 yılında Anadolu FC&apos;yi </strong>
-      kurdu.
-    </p>
+    <p>{t.history.p1}</p>
+    <p>{t.history.p2}</p>
+    <p>{t.history.p3}</p>
+    <p>{t.history.p4}</p>
 
-    <p>
-      Tamamı Almatı&apos;da yaşayan Türk iş insanlarından oluşan takımımız,
-      futbol sevgisini, dostluğu ve dayanışmayı aynı forma altında
-      buluşturarak veteran liginde mücadele etmeye başladı. Anadolu FC,
-      kısa sürede yalnızca sahadaki performansıyla değil; centilmenliği,
-      takım ruhu ve örnek duruşuyla da ligin saygı duyulan ekiplerinden
-      biri haline geldi.
-    </p>
-
-    <p>
-      <strong className="text-white">2024 yılında</strong> kulübümüz yeni
-      bir yapılanma sürecine girerek
-      <strong className="text-white"> Altay FC </strong>
-      adıyla yoluna devam etme kararı aldı. Yenilenen kadrosu, yeni
-      formaları ve güçlü takım ruhuyla Altay FC, geçmişten aldığı değerleri
-      geleceğe taşıyan yeni bir sayfa açtı.
-    </p>
-
-    <p>
-      Altay FC, yeni kimliğiyle çıktığı ilk sezonda ligde istediği puanları
-      toplayamasa da kupa organizasyonunda gösterdiği mücadeleyle yarı
-      finale yükselmeyi başardı. Güçlü rakibi
-      <strong className="text-white"> Dostar </strong>
-      karşısında normal süresi
-      <strong className="text-white"> 0-0 </strong>
-      sona eren karşılaşmada, penaltı atışları sonucunda
-      <strong className="text-white"> 5-4 </strong>
-      mağlup olarak turnuvaya veda etti.
-    </p>
-
-    <p>
-      <strong className="text-white">2026 sezonunun ilk yarısını</strong>,
-      dokuz takımlı ligde averajla
-      <strong className="text-white"> 7. sırada </strong>
-      tamamlayan Altay FC, sezonun ikinci yarısında üst sıralara yükselmek
-      için mücadelesini kararlılıkla sürdürmektedir.
-    </p>
-
-    <p>
-      Bugün Altay FC, Almatı&apos;da yaşayan Türk toplumunu sporun
-      birleştirici gücü etrafında buluşturan güçlü bir dostluk ailesidir.
-      Kulübümüz fair-play anlayışı, centilmenliği ve mücadele ruhuyla
-      yoluna devam etmektedir.
-    </p>
+    <p>{t.history.p5}</p>
+    <p>{t.history.p6}</p>
   </div>
 </div>
 
 <div className="mt-10 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-8 text-center md:p-10">
   <p className="text-2xl font-black italic leading-snug text-emerald-400 md:text-4xl">
-    &ldquo;Altay FC, sahada rekabeti; saha dışında dostluğu temsil
-    eder.&rdquo;
-  </p>
+  {t.history.quote}
+</p>
 </div>
 </div>
 </section>
