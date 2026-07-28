@@ -567,26 +567,9 @@ const positionLabels = {
       </h2>
     </div>
 
-    <div className="grid gap-6 md:grid-cols-2">
-      <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-        <img
-          src="/cuneyt-manager.png"
-          
-          className="h-72 w-full object-contain object-center"
-        />
-
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
-  {t.managerRole}
-</p>
-
-<h3 className="mt-2 text-3xl font-black">
-  Cüneyt Tanrıverdi
-</h3>
-
-<p className="mt-4 text-white/70">
-  {t.managerText}
-</p>
-      </div>
+    <div className="mx-auto max-w-xl">
+ 
+      
 
       <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
         <img
