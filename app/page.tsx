@@ -131,7 +131,7 @@ const positionLabels = {
               {t.news}
             </a>
           </nav>
-          <div className="hidden md:flex items-center gap-3 text-xs font-semibold uppercase tracking-wider">
+          <div className="flex items-center gap-3 text-xs font-semibold uppercase">
   <button
   onClick={() => setLanguage("tr")}
   className={`transition ${language === "tr" ? "text-emerald-400" : ""}`}
