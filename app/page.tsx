@@ -279,34 +279,33 @@ const positionLabels = {
 
             <div className="flex flex-col justify-center rounded-3xl border border-white/10 bg-black p-8 md:p-12">
               <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
-                2026 Kadrosu
+                {t.squadLabel}
               </p>
 
               <h2 className="mt-5 text-4xl font-black md:text-6xl">
-                Sahada mücadele,
+                {t.squadTitle1}
                 <span className="block text-white/30">
-                  saha dışında dostluk.
+                  {t.squadTitle2}
                 </span>
               </h2>
 
               <p className="mt-7 leading-8 text-white/60">
-                ALTAY FC oyuncu kadrosu, resmî takım listesine göre forma
-                numaraları ve pozisyonlarıyla ayrı oyuncu kartları şeklinde
-                eklenecektir.
-              </p>
+  {t.squadText}
+</p>
+            
 
               <div className="mt-10 grid grid-cols-2 gap-4">
                 <div className="rounded-2xl bg-zinc-950 p-5">
                   <p className="text-3xl font-black text-emerald-500">28</p>
                   <p className="mt-2 text-sm uppercase tracking-wider text-white/45">
-                    Oyuncu
+                    {t.squadPlayers}
                   </p>
                 </div>
 
                 <div className="rounded-2xl bg-zinc-950 p-5">
                   <p className="text-3xl font-black text-emerald-500">40+</p>
                   <p className="mt-2 text-sm uppercase tracking-wider text-white/45">
-                    Veteran
+                    {t.squadVeteran}
                   </p>
                 </div>
               </div>
@@ -318,12 +317,12 @@ const positionLabels = {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
-              2026 Resmî Kadrosu
+              {t.officialSquadLabel}
             </p>
 
             <h2 className="mt-4 text-4xl font-black md:text-6xl">
-              ALTAY FC
-              <span className="block text-white/30">Oyuncuları</span>
+              {t.officialSquadTitle1}
+              <span className="block text-white/30"> {t.officialSquadTitle2} </span>
             </h2>
           </div>
 
@@ -497,12 +496,12 @@ const positionLabels = {
   <div className="mx-auto max-w-7xl">
     <div className="mb-12">
       <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
-        Galeri
+        {t.galleryLabel}
       </p>
 
       <h2 className="mt-4 text-4xl font-black md:text-6xl">
-        ALTAY FC
-        <span className="block text-white/30">unutulmaz anlar.</span>
+        {t.galleryTitle1}
+        <span className="block text-white/30">{t.galleryTitle2}</span>
       </h2>
     </div>
 
@@ -544,7 +543,7 @@ const positionLabels = {
         </p>
 
         <p className="mt-1 text-lg font-bold">
-          Kulüp Arşivi
+          {t.galleryArchive}
         </p>
       </div>
     </div>
@@ -559,12 +558,12 @@ const positionLabels = {
   <div className="mx-auto max-w-7xl">
     <div className="mb-12">
       <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
-        Takım
+        {t.teamLabel}
       </p>
 
       <h2 className="mt-4 text-4xl font-black md:text-6xl">
-        ALTAY FC
-        <span className="block text-white/30">yönetim ve teknik ekip.</span>
+        {t.teamTitle1}
+        <span className="block text-white/30">{t.teamTitle2}</span>
       </h2>
     </div>
 
@@ -577,7 +576,7 @@ const positionLabels = {
         />
 
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
-  Kulüp Yöneticisi
+  {t.managerRole}
 </p>
 
 <h3 className="mt-2 text-3xl font-black">
@@ -585,7 +584,7 @@ const positionLabels = {
 </h3>
 
 <p className="mt-4 text-white/70">
-  Altay FC'nin organizasyonu, kurumsal yapısı ve sportif faaliyetlerinin koordinasyonundan sorumludur.
+  {t.managerText}
 </p>
       </div>
 
@@ -598,7 +597,7 @@ const positionLabels = {
 
         <div className="p-6">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
-            Teknik Direktör
+            {t.coachRole}
           </p>
 
           <h3 className="mt-2 text-3xl font-black">
@@ -606,7 +605,7 @@ const positionLabels = {
           </h3>
 
           <p className="mt-3 leading-7 text-white/60">
-  Takımın teknik organizasyonu, maç hazırlıkları ve saha içi yönetiminden sorumludur.
+  {t.coachText}
           </p>
         </div>
       </div>
@@ -660,20 +659,16 @@ const positionLabels = {
   <div className="mx-auto max-w-7xl">
     <div className="mb-14 max-w-4xl">
       <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">
-        Kulüp Etkinlikleri
+        {t.awardsLabel}
       </p>
 
       <h2 className="mt-4 text-4xl font-black text-white md:text-6xl">
-        2025 Sezon Sonu
-        <span className="block text-white/30">Ödül Töreni</span>
+        {t.awardsTitle1}
+        <span className="block text-white/30">{t.awardsTitle2}</span>
       </h2>
 
       <p className="mt-6 text-lg leading-8 text-white/70">
-        Altay FC, 2025 sezonunun ardından düzenlenen Almatı Veteran Futbol
-        Ligi ödül töreninde Almatı Futbol Federasyonu yöneticileri, teknik
-        ekipler ve diğer kulüp temsilcileriyle birlikte yer aldı. Kulübümüzü
-        temsilen takım yöneticisi ve kaptanı Cüneyt Tanrıverdi ödülü teslim
-        aldı.
+        {t.awardsIntro}
       </p>
     </div>
 
@@ -688,17 +683,15 @@ const positionLabels = {
 
       <div className="p-6 md:p-8">
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
-          Altay FC
-        </p>
+  {t.awardsCardTitle}
+</p>
 
-        <h3 className="mt-2 text-2xl font-black text-white md:text-3xl">
-          Kulübümüz adına ödülün teslim alınışı
-        </h3>
-
-        <p className="mt-3 max-w-3xl leading-7 text-white/60">
-          Takım kaptanı Cüneyt Tanrıverdi, sezon sonu ödül
-          töreninde Altay FC adına ödülü teslim aldı.
-        </p>
+       <h3 className="mt-2 text-2xl font-black text-white md:text-3xl">
+  {t.awardsCardTitle}
+</h3>
+<p className="mt-3 max-w-3xl leading-7 text-white/60">
+  {t.awardsCardText}
+</p>
       </div>
     </div>
 
@@ -714,13 +707,12 @@ const positionLabels = {
 
         <div className="p-6">
           <h3 className="text-xl font-black text-white">
-            Federasyon ve kulüp temsilcileri
-          </h3>
+  {t.awardsGroupTitle}
+</h3>
 
-          <p className="mt-3 leading-7 text-white/60">
-            Almatı Futbol Federasyonu yöneticileri ve veteran liginde yer alan
-            kulüplerin temsilcileri sezon kapanışında bir araya geldi.
-          </p>
+      <p className="mt-3 leading-7 text-white/60">
+  {t.awardsGroupText}
+</p>
         </div>
       </div>
 
@@ -735,21 +727,19 @@ const positionLabels = {
 
         <div className="p-6">
           <h3 className="text-xl font-black text-white">
-            2025 sezonunun kapanışı
-          </h3>
+  {t.awardsSeasonTitle}
+</h3>
 
           <p className="mt-3 leading-7 text-white/60">
-            Sezon boyunca mücadele eden takımların başarıları kupa ve
-            ödüllerle taçlandırıldı.
-          </p>
+  {t.awardsSeasonText}
+</p>
         </div>
       </div>
     </div>
 
     <div className="mt-10 rounded-3xl border border-emerald-500/20 bg-emerald-500/5 px-8 py-10 text-center">
       <p className="mx-auto max-w-4xl text-xl font-semibold leading-9 text-white/85 md:text-2xl">
-        “Kupalar bir sezonu temsil eder. Dostluk ise yıllar boyunca kulübün en
-        büyük başarısı olarak kalır.”
+        {t.awardsQuote}
       </p>
 
       <p className="mt-5 text-sm font-bold uppercase tracking-[0.3em] text-emerald-400">
@@ -765,18 +755,16 @@ const positionLabels = {
   <div className="mx-auto max-w-6xl">
     <div className="rounded-3xl border border-white/10 bg-white/5 px-8 py-14 text-center md:px-14">
       <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-400">
-        İletişim
+        {t.contactLabel}
       </p>
 
       <h2 className="mt-4 text-4xl font-black text-white md:text-6xl">
-        Altay FC ile
-        <span className="block text-white/30">iletişime geçin</span>
+        {t.contactTitle1} {t.contactTitle2}
       </h2>
+    
 
       <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/65">
-        Altay FC, Almatı Veteran Futbol Ligi’nde mücadele eden 40+ veteran
-        futbol kulübüdür. Kulüp faaliyetleri ve güncel paylaşımlarımız için
-        Instagram hesabımızı takip edebilirsiniz.
+        {t.contactText}
       </p>
 
       <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -786,11 +774,11 @@ const positionLabels = {
           rel="noreferrer"
           className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-8 py-4 text-sm font-black uppercase tracking-[0.15em] text-black transition hover:scale-105 hover:bg-emerald-400"
         >
-          Instagram&apos;da Takip Et
+          {t.contactInstagram}
         </a>
 
         <div className="rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white/70">
-          Almatı • Kazakistan
+          {t.contactLocation}
         </div>
       </div>
 
@@ -812,7 +800,7 @@ const positionLabels = {
       <div className="h-px w-24 bg-emerald-500/50" />
 
       <p className="text-sm font-bold uppercase tracking-[0.5em] text-emerald-500">
-        Anısına
+        {t.memoryLabel}
       </p>
 
       <div className="h-px w-24 bg-emerald-500/50" />
@@ -825,12 +813,11 @@ const positionLabels = {
     />
 
     <h2 className="mt-8 text-4xl font-black text-white md:text-5xl">
-      Ekrem Kılınç
+      {t.memoryTitle1}
     </h2>
 
     <p className="mt-3 text-sm font-bold uppercase tracking-[0.35em] text-emerald-400">
-      Altay FC Ailesinin Unutulmaz İsmi
-    </p>
+{t.memoryTitle2}    </p>
 
     <p className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-white/40">
       Altay FC • 2026 Kış Ligi
@@ -839,48 +826,35 @@ const positionLabels = {
     <div className="mx-auto my-8 h-px w-32 bg-emerald-500" />
 
     <div className="mx-auto max-w-3xl space-y-6 text-lg leading-8 text-white/75">
-      <p>
-        Güzel dostumuz ve takım arkadaşımız{" "}
-        <strong className="text-white">Ekrem Kılınç</strong>, yakalandığı
-        amansız hastalığa karşı verdiği mücadeleyi ne yazık ki kaybederek
-        aramızdan ayrıldı.
-      </p>
-
-      <p>
-        2026 yılı Kış Ligi&apos;nde Altay FC formasıyla birlikte sahada
-        mücadele etti. Güler yüzü, karakteri, dostluğu ve mücadeleci ruhuyla
-        takımımızın unutulmaz isimlerinden biri olarak daima kalplerimizde
-        yaşayacaktır.
-      </p>
+      {t.memoryText}
     </div>
 
     <div className="mx-auto mt-9 max-w-3xl rounded-2xl border-x-2 border-emerald-500/60 px-8 py-5">
       <p className="text-xl font-semibold italic leading-8 text-emerald-400">
-        Bazı insanlar sadece birlikte forma giydiğimiz takım arkadaşlarımız
-        değildir; hayatımızda iz bırakan dostlarımızdır.
+        {t.memoryQuote}
       </p>
     </div>
 
     <p className="mt-8 text-lg font-bold text-white">
-      Allah&apos;tan rahmet, ailesine ve tüm sevenlerine sabır diliyoruz.
+      {t.memoryPrayer}
     </p>
 
     <p className="mt-7 text-3xl font-bold italic text-emerald-400 md:text-4xl">
-      Seni hiçbir zaman unutmayacağız.
+      {t.memoryNeverForget}
     </p>
 
     <div className="mx-auto mt-10 flex max-w-2xl items-center gap-5">
       <div className="h-px flex-1 bg-white/15" />
 
       <p className="text-sm font-bold uppercase tracking-[0.5em] text-white/50">
-        Altay FC Ailesi
+        {t.memoryFamily}
       </p>
 
       <div className="h-px flex-1 bg-white/15" />
     </div>
 
     <p className="mt-6 text-sm text-white/35">
-      💚 Hatıran, Altay FC ailesiyle birlikte yaşamaya devam edecek. 💚
+      {t.memoryClosing}
     </p>
 
   </div>

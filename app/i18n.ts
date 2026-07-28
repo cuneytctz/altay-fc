@@ -87,6 +87,87 @@ newsP2:
   "Toplantıda federasyon yetkilileri ile takım temsilcileri yeni sezon organizasyonu, fikstür planlaması, oyun kuralları ve sezon boyunca uygulanacak esaslar hakkında görüş alışverişinde bulundu.",
 newsP3:
   "Yeni sezonun tüm takımlar için centilmence, dostluk içinde, sakatlıksız ve başarılı geçmesini diliyoruz.",
+
+  galleryLabel: "Galeri",
+galleryTitle1: "ALTAY FC",
+galleryTitle2: "unutulmaz anlar.",
+galleryArchive: "Kulüp Arşivi",
+awardsLabel: "Kulüp Etkinlikleri",
+awardsTitle1: "2025 Sezon Sonu",
+awardsTitle2: "Ödül Töreni",
+awardsIntro:
+  "Altay FC, 2025 sezonunun ardından düzenlenen Almatı Veteran Futbol Ligi ödül töreninde Almatı Futbol Federasyonu yöneticileri, teknik ekipler ve diğer kulüp temsilcileriyle birlikte yer aldı. Kulübümüzü temsilen takım yöneticisi ve kaptanı Cüneyt Tanrıverdi ödülü teslim aldı.",
+
+awardsCardTitle: "Kulübümüz adına ödülün teslim alınışı",
+awardsCardText:
+  "Takım kaptanı Cüneyt Tanrıverdi, sezon sonu ödül töreninde Altay FC adına ödülü teslim aldı.",
+
+awardsGroupTitle: "Federasyon ve kulüp temsilcileri",
+awardsGroupText:
+  "Almatı Futbol Federasyonu yöneticileri ve veteran liginde yer alan kulüplerin temsilcileri sezon kapanışında bir araya geldi.",
+
+awardsSeasonTitle: "2025 sezonunun kapanışı",
+awardsSeasonText:
+  "Sezon boyunca mücadele eden takımların başarıları kupa ve ödüllerle taçlandırıldı.",
+
+awardsQuote:
+  "Kupalar bir sezonu temsil eder. Dostluk ise yıllar boyunca kulübün en büyük başarısı olarak kalır.",
+  contactLabel: "İletişim",
+contactTitle1: "Bizimle",
+contactTitle2: "İletişime Geçin",
+contactText:
+  "Altay FC hakkında bilgi almak, dostluk maçları düzenlemek veya bizimle iletişime geçmek için aşağıdaki bilgilerden bize ulaşabilirsiniz.",
+
+contactPhone: "Telefon",
+contactEmail: "E-posta",
+contactAddress: "Adres",
+
+contactInstagram: "Instagram'da Takip Et",
+contactLocation: "Almatı • Kazakistan",
+
+memoryLabel: "Anısına",
+memoryTitle1: "Ekrem Kılınç",
+memoryTitle2: "Daima Kalbimizde",
+memoryText:
+  "Altay FC ailesi olarak aramızdan ayrılan değerli takım arkadaşımız Ekrem Kılınç'ı saygı, sevgi ve özlemle anıyoruz. Onun dostluğu, karakteri ve futbol sevgisi kulübümüzün hafızasında yaşamaya devam edecektir.",
+
+memoryQuote:
+  "Bazı insanlar aramızdan ayrılsa da bıraktıkları iz hiçbir zaman silinmez.",
+
+  memoryPrayer:
+  "Allah'tan rahmet, ailesine ve tüm sevenlerine sabır diliyoruz.",
+
+memoryNeverForget:
+  "Seni hiçbir zaman unutmayacağız.",
+
+memoryFamily:
+  "Altay FC Ailesi",
+
+memoryClosing:
+  "💚 Hatıran, Altay FC ailesiyle birlikte yaşamaya devam edecek. 💚",
+
+  teamLabel: "Takım",
+teamTitle1: "ALTAY FC",
+teamTitle2: "yönetim ve teknik ekip.",
+
+managerRole: "Kulüp Yöneticisi",
+managerText:
+  "Altay FC'nin organizasyonu, kurumsal yapısı ve sportif faaliyetlerinin koordinasyonundan sorumludur.",
+
+coachRole: "Teknik Direktör",
+coachText:
+  "Takımın teknik organizasyonu, maç hazırlıkları ve saha içi yönetiminden sorumludur.",
+
+  squadLabel: "2026 Kadrosu",
+squadTitle1: "Sahada mücadele,",
+squadTitle2: "saha dışında dostluk.",
+squadText:
+  "ALTAY FC oyuncu kadrosu, resmî takım listesine göre forma numaraları ve pozisyonlarıyla ayrı oyuncu kartları şeklinde eklenecektir.",
+squadPlayers: "Oyuncu",
+squadVeteran: "Veteran",
+officialSquadLabel: "2026 Resmî Kadrosu",
+officialSquadTitle1: "ALTAY FC",
+officialSquadTitle2: "Oyuncuları",
 },
 
   ru: {
@@ -173,6 +254,88 @@ newsP2:
 newsP3:
   "Желаем всем командам честного, дружеского, успешного сезона без травм.",
 
+  galleryLabel: "Галерея",
+galleryTitle1: "ALTAY FC",
+galleryTitle2: "незабываемые моменты.",
+galleryArchive: "Архив клуба", 
+
+awardsLabel: "Клубные мероприятия",
+awardsTitle1: "Завершение сезона 2025",
+awardsTitle2: "Церемония награждения",
+awardsIntro:
+  "После завершения сезона 2025 года Altay FC принял участие в церемонии награждения Ветеранской футбольной лиги Алматы вместе с руководителями Федерации футбола Алматы, тренерскими штабами и представителями других клубов. Награду от имени нашего клуба получил руководитель и капитан команды Джюнейт Танрыверди.",
+
+awardsCardTitle: "Получение награды от имени клуба",
+awardsCardText:
+  "Капитан команды Джюнейт Танрыверди получил награду от имени Altay FC на церемонии закрытия сезона.",
+
+awardsGroupTitle: "Представители федерации и клубов",
+awardsGroupText:
+  "Руководители Федерации футбола Алматы и представители клубов ветеранской лиги собрались вместе на закрытии сезона.",
+
+awardsSeasonTitle: "Завершение сезона 2025",
+awardsSeasonText:
+  "Достижения команд, участвовавших в соревнованиях на протяжении сезона, были отмечены кубками и наградами.",
+
+awardsQuote:
+  "Кубки символизируют один сезон. Дружба же остаётся величайшим достижением клуба на долгие годы.",
+
+  contactLabel: "Контакты",
+contactTitle1: "Свяжитесь",
+contactTitle2: "с нами",
+contactText:
+  "Если вы хотите узнать больше об Altay FC, организовать товарищеский матч или связаться с нашим клубом, воспользуйтесь контактной информацией ниже.",
+
+contactPhone: "Телефон",
+contactEmail: "Электронная почта",
+contactAddress: "Адрес",
+
+contactInstagram: "Подписаться в Instagram",
+contactLocation: "Алматы • Казахстан",
+
+memoryLabel: "Памяти",
+memoryTitle1: "Экрем Кылынч",
+memoryTitle2: "Навсегда в наших сердцах",
+memoryText:
+  "Семья Altay FC с глубоким уважением, любовью и светлой памятью вспоминает нашего дорогого товарища по команде Экрема Кылынча. Его дружба, характер и любовь к футболу навсегда останутся частью истории нашего клуба.",
+
+memoryQuote:
+  "Некоторые люди уходят, но след, который они оставляют, остаётся навсегда.",
+
+  memoryPrayer:
+  "Выражаем искренние соболезнования его семье и всем близким.",
+
+memoryNeverForget:
+  "Мы никогда тебя не забудем.",
+
+memoryFamily:
+  "Семья Altay FC",
+
+memoryClosing:
+  "💚 Память о тебе всегда будет жить вместе с семьёй Altay FC. 💚",
+
+  teamLabel: "Команда",
+teamTitle1: "ALTAY FC",
+teamTitle2: "руководство и тренерский штаб.",
+
+managerRole: "Руководитель клуба",
+managerText:
+  "Отвечает за организацию клуба, корпоративную структуру и координацию спортивной деятельности.",
+
+coachRole: "Главный тренер",
+coachText:
+  "Отвечает за техническую подготовку команды, организацию матчей и руководство на поле.",
+
+  squadLabel: "Состав 2026",
+squadTitle1: "Борьба на поле,",
+squadTitle2: "дружба за его пределами.",
+squadText:
+  "Состав ALTAY FC будет представлен отдельными карточками игроков с номерами и позициями согласно официальному списку команды.",
+squadPlayers: "Игроков",
+squadVeteran: "Ветеранов",
+officialSquadLabel: "Официальный состав 2026",
+officialSquadTitle1: "Игроки",
+officialSquadTitle2: "ALTAY FC",
 },
 
   kz: {
@@ -258,7 +421,87 @@ newsP2:
   "Кездесуде федерация өкілдері мен команда өкілдері жаңа маусымды ұйымдастыру, ойын кестесін жоспарлау, ойын ережелері және маусым бойы қолданылатын қағидалар туралы пікір алмасты.",
 newsP3:
   "Жаңа маусым барлық командалар үшін әділ, достық жағдайда, жарақатсыз және сәтті өтсін деп тілейміз.",
+galleryLabel: "Галерея",
+galleryTitle1: "ALTAY FC",
+galleryTitle2: "ұмытылмас сәттер.",
+galleryArchive: "Клуб мұрағаты",
 
+awardsLabel: "Клуб іс-шаралары",
+awardsTitle1: "2025 маусымының қорытындысы",
+awardsTitle2: "Марапаттау рәсімі",
+awardsIntro:
+  "Altay FC 2025 маусымы аяқталғаннан кейін Алматы Ардагерлер футбол лигасының марапаттау рәсіміне Алматы футбол федерациясының басшыларымен, жаттықтырушылармен және басқа клуб өкілдерімен бірге қатысты. Клубымыздың атынан марапатты команда жетекшісі әрі капитаны Жүнейт Танрыверди қабылдап алды.",
+
+awardsCardTitle: "Клуб атынан марапатты қабылдау",
+awardsCardText:
+  "Команда капитаны Жүнейт Танрыверди маусым соңындағы марапаттау рәсімінде Altay FC атынан марапатты қабылдап алды.",
+
+awardsGroupTitle: "Федерация және клуб өкілдері",
+awardsGroupText:
+  "Алматы футбол федерациясының басшылары мен ардагерлер лигасындағы клубтардың өкілдері маусымның жабылу рәсімінде бас қосты.",
+
+awardsSeasonTitle: "2025 маусымының жабылуы",
+awardsSeasonText:
+  "Маусым бойы өнер көрсеткен командалардың жетістіктері кубоктармен және марапаттармен атап өтілді.",
+
+awardsQuote:
+  "Кубоктар бір маусымды білдіреді. Ал достық ұзақ жылдар бойы клубтың ең үлкен жетістігі болып қалады.",
+
+contactLabel: "Байланыс",
+contactTitle1: "Бізбен",
+contactTitle2: "Хабарласыңыз",
+contactText:
+  "Altay FC туралы қосымша ақпарат алу, жолдастық матч ұйымдастыру немесе клубымызбен байланысу үшін төмендегі байланыс мәліметтерін пайдаланыңыз.",
+
+contactPhone: "Телефон",
+contactEmail: "Электрондық пошта",
+contactAddress: "Мекенжай",
+
+contactInstagram: "Instagram-да жазылыңыз",
+contactLocation: "Алматы • Қазақстан",
+
+memoryLabel: "Естелік",
+memoryTitle1: "Экрем Кылыныш",
+memoryTitle2: "Жүрегімізде мәңгі",
+memoryText:
+  "Altay FC отбасы арамыздан кеткен қымбатты командаласымыз Экрем Кылынышты үлкен құрметпен, сағынышпен және сүйіспеншілікпен еске алады. Оның достығы, мінезі және футболға деген сүйіспеншілігі клубымыздың тарихында мәңгі сақталады.",
+
+memoryQuote:
+  "Кейбір адамдар өмірден өтсе де, қалдырған ізі ешқашан өшпейді.",
+
+  memoryPrayer:
+  "Отбасына және барлық жақындарына қайғырып көңіл айтамыз.",
+
+memoryNeverForget:
+  "Сені ешқашан ұмытпаймыз.",
+
+memoryFamily:
+  "Altay FC отбасы",
+
+memoryClosing:
+  "💚 Сенің жарқын бейнең Altay FC отбасымен бірге мәңгі өмір сүреді. 💚",
+
+  teamLabel: "Команда",
+teamTitle1: "ALTAY FC",
+teamTitle2: "басшылық және жаттықтырушылар құрамы.",
+
+managerRole: "Клуб жетекшісі",
+managerText:
+  "Клубтың ұйымдастырылуына, корпоративтік құрылымына және спорттық қызметінің үйлестірілуіне жауап береді.",
+
+coachRole: "Бас жаттықтырушы",
+coachText:
+  "Команданың техникалық дайындығына, матчқа әзірлігіне және ойын барысындағы басқаруына жауап береді.",
+squadLabel: "2026 құрамы",
+squadTitle1: "Алаңда күрес,",
+squadTitle2: "алаңнан тыс достық.",
+squadText:
+  "ALTAY FC ойыншылар құрамы ресми тізімге сәйкес нөмірлері мен позициялары көрсетілген жеке карточкалар түрінде ұсынылады.",
+squadPlayers: "Ойыншы",
+squadVeteran: "Ардагер",
+officialSquadLabel: "2026 ресми құрамы",
+officialSquadTitle1: "ALTAY FC",
+officialSquadTitle2: "Ойыншылары",
 },
 
   en: {
@@ -344,6 +587,85 @@ newsP2:
   "During the meeting, federation officials and team representatives discussed the organisation of the new season, fixture planning, rules of the game and the principles to be applied throughout the season.",
 newsP3:
   "We wish all teams a fair, friendly, injury-free and successful new season.",
+galleryLabel: "Gallery",
+galleryTitle1: "ALTAY FC",
+galleryTitle2: "unforgettable moments.",
+galleryArchive: "Club Archive",
 
+awardsLabel: "Club Events",
+awardsTitle1: "End of the 2025 Season",
+awardsTitle2: "Awards Ceremony",
+awardsIntro:
+  "Following the 2025 season, Altay FC attended the Almaty Veteran Football League awards ceremony together with officials from the Almaty Football Federation, coaching staff and representatives of other clubs. Team manager and captain Cüneyt Tanrıverdi received the award on behalf of our club.",
+
+awardsCardTitle: "Receiving the award on behalf of our club",
+awardsCardText:
+  "Team captain Cüneyt Tanrıverdi received the award on behalf of Altay FC at the end-of-season ceremony.",
+
+awardsGroupTitle: "Federation and club representatives",
+awardsGroupText:
+  "Officials from the Almaty Football Federation and representatives of veteran league clubs came together for the season closing ceremony.",
+
+awardsSeasonTitle: "Closing of the 2025 season",
+awardsSeasonText:
+  "The achievements of the teams that competed throughout the season were celebrated with trophies and awards.",
+
+awardsQuote:
+  "Trophies represent a season. Friendship remains the club’s greatest achievement for many years.",
+
+contactLabel: "Contact",
+contactTitle1: "Get in",
+contactTitle2: "Touch",
+contactText:
+  "If you would like to learn more about Altay FC, arrange a friendly match or contact our club, please use the information below.",
+
+contactPhone: "Phone",
+contactEmail: "Email",
+contactAddress: "Address",
+contactInstagram: "Follow on Instagram",
+contactLocation: "Almaty • Kazakhstan",
+
+memoryLabel: "In Memory",
+memoryTitle1: "Ekrem Kılınç",
+memoryTitle2: "Forever in Our Hearts",
+memoryText:
+  "The Altay FC family remembers our beloved teammate Ekrem Kılınç with respect, love and deep gratitude. His friendship, character and passion for football will always remain a part of our club's history.",
+
+memoryQuote:
+  "Some people leave us, but the mark they leave behind never fades.",
+
+  memoryPrayer:
+  "We extend our deepest condolences to his family and loved ones.",
+
+memoryNeverForget:
+  "We will never forget you.",
+
+memoryFamily:
+  "The Altay FC Family",
+
+memoryClosing:
+  "💚 Your memory will always live on with the Altay FC family. 💚",
+
+  teamLabel: "Team",
+teamTitle1: "ALTAY FC",
+teamTitle2: "management and coaching staff.",
+
+managerRole: "Club Manager",
+managerText:
+  "Responsible for the club's organization, corporate structure and coordination of sporting activities.",
+
+coachRole: "Head Coach",
+coachText:
+  "Responsible for the team's technical preparation, match organization and on-field management.",
+  squadLabel: "2026 Squad",
+squadTitle1: "Competition on the pitch,",
+squadTitle2: "friendship beyond it.",
+squadText:
+  "The ALTAY FC squad will be presented in individual player cards with shirt numbers and positions according to the official team list.",
+squadPlayers: "Players",
+squadVeteran: "Veterans",
+officialSquadLabel: "Official 2026 Squad",
+officialSquadTitle1: "ALTAY FC",
+officialSquadTitle2: "Players",
 },
 };
