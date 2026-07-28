@@ -1,6 +1,19 @@
-export const metadata: Metadata = {
-  url: "https://altayfc.kz",
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://altayfc.kz"),
 
   title: {
     default: "Altay FC | Almatı Veteran Futbol Kulübü",
@@ -25,6 +38,10 @@ export const metadata: Metadata = {
   creator: "Altay FC",
   publisher: "Altay FC",
 
+  alternates: {
+    canonical: "https://altayfc.kz",
+  },
+
   openGraph: {
     title: "Altay FC | Almatı Veteran Futbol Kulübü",
     description:
@@ -46,8 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Altay FC",
-    description:
-      "Altay FC Resmi Web Sitesi",
+    description: "Altay FC Resmi Web Sitesi",
     images: ["/og-image.jpg"],
   },
 
@@ -61,8 +77,19 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-
-  alternates: {
-  canonical: "https://altayfc.kz",
-},
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="tr"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col">{children}</body>
+    </html>
+  );
+}
