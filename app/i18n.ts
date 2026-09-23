@@ -19,8 +19,8 @@ export const translations = {
     galleryButton: "GALERİYİ İNCELE",
     anthemPlay: "▶ Marşı Dinle",
     anthemStop: "❚❚ Marşı Durdur",
-    aboutTitleLine1: "Bir takımın ötesinde,",
-aboutTitleLine2: "büyük bir aile.",
+    aboutTitleLine1: "Futbol bir spor dalıdır,",
+aboutTitleLine2: "Sporda hayata tutunmanın dalıdır.",
 aboutText1:
   "ALTAY FC, Kazakistan'ın Almatı şehrinde faaliyet gösteren ve 40 yaş üzeri Veteran Futbol Ligi'nde mücadele eden Türk futbol takımıdır.",
 aboutText2:
@@ -95,12 +95,12 @@ galleryArchive: "Kulüp Arşivi",
 awardsLabel: "Kulüp Etkinlikleri",
 awardsTitle1: "2025 Sezon Sonu",
 awardsTitle2: "Ödül Töreni",
+awardsCardTitle: "Ödül töreni",
+awardsCardText: "Altay FC olarak, 2025 sezon sonu ödül töreninde Almatı Futbol Federasyonu yöneticileri ve diğer kulüp temsilcileriyle birlikte yer aldık.Kazakistan veteran futboluna verdigimiz destek sebebiyle ödülümüzü aldık",
 awardsIntro:
-  "Altay FC, 2025 sezonunun ardından düzenlenen Almatı Veteran Futbol Ligi ödül töreninde Almatı Futbol Federasyonu yöneticileri, teknik ekipler ve diğer kulüp temsilcileriyle birlikte yer aldı. Kulübümüzü temsilen takım yöneticisi ve kaptanı Cüneyt Tanrıverdi ödülü teslim aldı.",
+  "2025 sezonunun ardından düzenlenen Almatı Veteran Futbol Ligi ödül töreninde Altay takımı olarak,  Almatı Futbol Federasyonu yöneticileri ve  diğer kulüp temsilcileriyle birlikte yer aldık.",
 
-awardsCardTitle: "Kulübümüz adına ödülün teslim alınışı",
-awardsCardText:
-  "Takım kaptanı Cüneyt Tanrıverdi, sezon sonu ödül töreninde Altay FC adına ödülü teslim aldı.",
+
 
 awardsGroupTitle: "Federasyon ve kulüp temsilcileri",
 awardsGroupText:
@@ -111,7 +111,7 @@ awardsSeasonText:
   "Sezon boyunca mücadele eden takımların başarıları kupa ve ödüllerle taçlandırıldı.",
 
 awardsQuote:
-  "Kupalar bir sezonu temsil eder. Dostluk ise yıllar boyunca kulübün en büyük başarısı olarak kalır.",
+  "Spor dostluk ve kardeşliktir",
   contactLabel: "İletişim",
 contactTitle1: "Bizimle",
 contactTitle2: "İletişime Geçin",
@@ -129,10 +129,9 @@ memoryLabel: "Anısına",
 memoryTitle1: "Ekrem Kılınç",
 memoryTitle2: "Daima Kalbimizde",
 memoryText:
-  "Altay FC ailesi olarak aramızdan ayrılan değerli takım arkadaşımız Ekrem Kılınç'ı saygı, sevgi ve özlemle anıyoruz. Onun dostluğu, karakteri ve futbol sevgisi kulübümüzün hafızasında yaşamaya devam edecektir.",
-
+  "Altay FC ailesi olarak aramızdan ayrılan değerli dostumuz ve takım arkadaşımız Ekrem Kılınç'ı saygı, sevgi ve rahmetle anıyoruz. Onun dostluğu, karakteri ve futbola olan sevgisi kalbimizde daima yaşayacaktır.",
 memoryQuote:
-  "Bazı insanlar aramızdan ayrılsa da bıraktıkları iz hiçbir zaman silinmez.",
+  "Bazı insanlar aramızdan ayrılsa da bıraktıkları izler hiçbir zaman silinmez.",
 
   memoryPrayer:
   "Allah'tan rahmet, ailesine ve tüm sevenlerine sabır diliyoruz.",
@@ -144,15 +143,12 @@ memoryFamily:
   "Altay FC Ailesi",
 
 memoryClosing:
-  "💚 Hatıran, Altay FC ailesiyle birlikte yaşamaya devam edecek. 💚",
+  "💚 Hatıran, bızımle birlikte yaşamaya sonsuza dek devam edecek. 💚",
 
   teamLabel: "Takım",
 teamTitle1: "ALTAY FC",
 teamTitle2: "yönetim ve teknik ekip.",
 
-managerRole: "Kulüp Yöneticisi",
-managerText:
-  "Altay FC'nin organizasyonu, kurumsal yapısı ve sportif faaliyetlerinin koordinasyonundan sorumludur.",
 
 coachRole: "Teknik Direktör",
 coachText:
@@ -162,7 +158,7 @@ coachText:
 squadTitle1: "Sahada mücadele,",
 squadTitle2: "saha dışında dostluk.",
 squadText:
-  "ALTAY FC oyuncu kadrosu, resmî takım listesine göre forma numaraları ve pozisyonlarıyla ayrı oyuncu kartları şeklinde eklenecektir.",
+  "ALTAY FC kadrosu, resmi takım listesine göre numaraları ve pozisyonlarıyla birlikte ayrılırlar.",
 squadPlayers: "Oyuncu",
 squadVeteran: "Veteran",
 officialSquadLabel: "2026 Resmî Kadrosu",

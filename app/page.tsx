@@ -273,7 +273,7 @@ const positionLabels = {
               <img
                 src="/team.jpg"
                 alt="ALTAY FC takım kadrosu"
-                className="h-full min-h-[420px] w-full object-cover"
+                className="h-full min-h-[420px] w-full object-contain"
               />
             </div>
 
@@ -328,16 +328,16 @@ const positionLabels = {
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {[
-  ["Oktay Aydın", "goalkeeper", 1],
+  ["Oktay Aydın", "goalkeeper", 61],
   ["Sebahattin Usanmaz", "midfielder", 8],
   ["Harun Şarapçıoğlu", "midfielder", 99],
-  ["Kemal Ayyildiz", "defender", 36],
+  ["Kemal Alyılmaz", "defender", 36],
   ["Hüseyin Yıldız", "defender", 62],
   ["Cüneyt Tanrıverdi", "midfielder", 5, true],
   ["Levent Yıldız", "midfielder", 16],
   ["Musa Arslan", "midfielder", 21],
   ["Erlan Satibaldiev", "midfielder", 3],
-  ["Murat Çelik", "midfielder", 6],
+  ["Murat Çelik", "midfielder", 27],
   ["Zafer Selvitopu", "midfielder", 26],
   ["Rıza Yalçın", "defender", 77],
   ["Rıza Çelik", "forward", 17],
@@ -346,10 +346,13 @@ const positionLabels = {
   ["Kasım Mauletov", "forward", 9],
   ["Yavuz Bekar", "forward", 88],
   ["Anatoliy Tsezman", "defender", 2],
-  ["İskander Gayniyev", "midfielder",7],
+  ["Muhammet Karaca", "midfielder",6],
   ["Akjol Mamırulı", "defender", 3],
   ["Adris Şehmus", "midfielder", 10],
   ["Azamat Rısbekov", "midfielder", 4],
+  ["Ersin Yaman", "midfielder", 11],
+  ["Daniyar Nesipbaev", "midfielder", 7],
+  ["Torebay Berdishev", "midfielder", 14],
 ]
             .map(([name, position, number, captain], index) => (
               <article
@@ -377,8 +380,31 @@ const positionLabels = {
     .replaceAll("ö", "o")
     .replaceAll(" ", "-")}.jpg`}
   alt={String(name)}
-  className="mb-6 h-32 w-32 rounded-full object-cover  border-2 border-green-500 shadow-lg mx-auto"
-/>
+  className="mb-6 h-32 w-32 rounded-full border-2 border-green-500"
+  style={{
+  objectFit: "cover",
+  objectPosition:
+    name === "Harun Sarapçıoğlu"
+      ? "50% 30%"
+      : name === "Yavuz Bekar"
+      ? "50% 30%"
+      : name === "Kasım Mauletov"
+      ? "50% 20%"
+      : name === "Kemal Ayyılmaz"
+      ? "50% 35%"
+      : name === "Hüseyin Yıldız"
+      ? "50% 30%"
+      : name === "Levent Yıldız"
+      ? "50% 30%"
+      : name === "Murat Çelik"
+      ? "50% 30%"
+      : name === "Mesut Özsaç"
+      ? "50% 25%"
+      : name === "Zafer Selvitopu"
+      ? "50% 25%"
+      : "50% 50%",
+}}
+/> 
                 <h3 className="text-center text-xl font-bold">{name}</h3>
 
                 <p className="mt-2 text-center text-sm uppercase tracking-[0.2em] text-emerald-500">
